@@ -1,0 +1,23 @@
+<section id="slider">
+        <div class="flexslider main-slider">
+            <ul class="slides">
+            {% for slide in slider %}
+                <li>
+                    <div class="container">
+                        <div class="slider-info">
+                            <div class="inner">
+                                <h1>{{ slide.title }}</h1>
+                                <div class="slider-text">
+                                    {{slide.body}}
+    
+                                </div>
+                                <a href="{{slide.url}}" class="btn btn-primary">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="{{MEDIA_URL}}/media/{{slide.image}}" alt="">
+                </li>
+            {% endfor  %}
+        </div>
+    </section>
+    <!-- slider close -->
