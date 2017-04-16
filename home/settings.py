@@ -25,7 +25,7 @@ SECRET_KEY = '=jm*=3nx_y0kqg=w73vq9bu0ina0_2k6v&n398c@c92x$07=i!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['intvar1.pythonanywhere.com']
 
 
 # Application definition
@@ -127,6 +127,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     '/var/www/static/',
 ]
-
+STATIC_ROOT = '/static/'
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
