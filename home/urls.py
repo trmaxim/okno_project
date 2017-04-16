@@ -29,4 +29,4 @@ urlpatterns = [
     url(r'^portfolio/$', ListViews.as_view(), name = 'portfolio'),
     url(r'^news/', include('news.urls')),
     url(r'^contact/$', contact, name="contact"),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
