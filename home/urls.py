@@ -23,6 +23,7 @@ from portfolio.views import ListViews
 from contacts.views import contact
 
 
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', Main.as_view(), name = 'main'),

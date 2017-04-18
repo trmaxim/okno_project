@@ -12,6 +12,7 @@ def contact(request):
 			name = form.cleaned_data['name']
 			number = form.cleaned_data['number']
 			date = form.cleaned_data['date']
+			
 			try:
 				you_admin_email = ['int_var@mail.ru']
 				send_mail(name, number, date, you_admin_email)
