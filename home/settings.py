@@ -25,7 +25,13 @@ SECRET_KEY = '=jm*=3nx_y0kqg=w73vq9bu0ina0_2k6v&n398c@c92x$07=i!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['intvar1.pythonanywhere.com']
+ALLOWED_HOSTS = []
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.mail.ru' #Например, smtp.gmail.com
+EMAIL_HOST_USER = 'int_var@mail.ru' #Например, user@gmail.com. Именно его необходимо указывать как ВАШ_EMAIL_ДЛЯ_ОТПРАВКИ_СООБЩЕНИЯ в исходном коде предыдущего пункта
+EMAIL_HOST_PASSWORD = 'VRVF1Nz4'
 
 
 # Application definition
@@ -123,8 +129,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
 
-STATIC_ROOT = os.path.join(BASE_DIR,"static")
-MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = '/media/'

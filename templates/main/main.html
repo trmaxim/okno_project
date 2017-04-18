@@ -3,45 +3,6 @@
 {% load staticfiles %}
 {% block content %}
 
-
-    <!-- 
-    <section id="slider">
-        <div class="flexslider main-slider">
-            <ul class="slides">
-                <li>
-                    <div class="container">
-                        <div class="slider-info">
-                            <div class="inner">
-                                <h1>Установка  окон не дорого</h1>
-                                <div class="slider-text">
-                                    Мы устанавливаем окна не дорого 
-    
-                                </div>
-                                <a class="btn btn-primary">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                    <img src="{% static 'img/slider-home/1.jpg' %}" alt="">
-                </li>
-                <li>
-                    <div class="container">
-                        <div class="slider-info">
-                            <div class="inner">
-                                <h1>Замер бесплатно</h1>
-                                <div class="slider-text">
-                                    Наши специалисты проводят замер бесплатно
-                                </div>
-                                <a class="btn btn-primary">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                    <img src="{% static 'img/slider-home/3.jpg' %}" alt="">
-                </li>
-            </ul>
-        </div>
-    </section>
-    -->
-
     <div class="clearfix"></div>
 
 
@@ -186,8 +147,8 @@
                                 <span class="month">{{ new.date_time|date:"M" }}</span>
                             </div>
                             <div class="txt">
-                                <h4><a href="css/index.html#">{{ new.title }}</a></h4>
-                                <span class="read">{{new.body|truncatechars:50}} <a href="#">Подробнее</a></span>
+                                <h4><a href="{{ new.get_absolute_url }}">{{ new.title }}</a></h4>
+                                <span class="read">{{new.body|truncatechars:50}} <a href="{{ new.get_absolute_url }}">Подробнее</a></span>
                             </div>
                         </li>
                         {% endfor %}

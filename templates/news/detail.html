@@ -24,7 +24,7 @@
                                     <h3 class="blog-title">{{news.title}}</h3>
                                 {{news.body}}
                             </div>
-                            <div class="meta-info">От <a href="#">{{news.author}}</a><span>|</span>Дата публикации: <em>{{news.published_date|date:'d.M.Y'}} год</em> | <em>Категория: </em></span><a href="{{news.category.get_absolute_url}}">{{news.category}}</a><span>|</span> </div>
+                            <div class="meta-info">От <a href="#">{{news.author}}</a><span>|</span>Дата публикации: <em>{{news.published_date|date:'d.M.Y'}} год</em><span></span> </div>
                         </li>
              
 
@@ -50,16 +50,6 @@
                                 </div>
                             </li>
                             {% endfor %}
-                        </ul>
-                    </div>
-
-                    <!-- widget category -->
-                    <div class="widget widget_category">
-                        <h4 class="title"><span>Категории</span></h4>
-                        <ul>
-                        {% for category in categories %}
-                            <li><a href="{{ category.get_absolute_url }}"><i class="icon-folder-close"></i>{{category.name}}</a></li>
-                        {% endfor %}
                         </ul>
                     </div>
                 </div>

@@ -19,7 +19,26 @@
                     <div class="contact_form_holder">
                         <form id="contact" class="row" name="form1" method="post" action="#">{% csrf_token %}
                         	<div class="span4">
-                            	{{ form.as_p }}
+                            	   {{ form.non_field_errors }}
+                                <div>
+                                  <label for="id_subject">Тема:</label>
+                                  {{ form.name.errors }}
+                                  {{ form.name }}
+                                </div>
+                                <div>
+                                  <label for="id_sender">Телефон для связи:</label>
+                                  {{ form.number.errors }}
+                                  {{ form.number }}
+                                </div>
+                                <div>
+                                  <label for="id_message">Когда вам позвонить:</label>
+                                  {{ form.date.errors }}
+                                  {{ form.date }}
+                                </div>
+                                <div>
+                                  {{ form.copy.errors }}
+                                  <label for="id_copy">Отправить копию себе {{ form.copy }}</label>
+                                </div>
                             	<p id="btnsubmit">
                                     <input type="submit" id="send" value="Отправить" class="btn btn-large" /></p>
                          	</div>
@@ -29,9 +48,6 @@
                 </div>
 
                 <div id="sidebar" class="span4">
-                    <!-- widget category -->
-                    <!-- widget tags -->
-                    <!-- widget text -->
                     <div class="widget widget-opening-hours">
                         <h4 class="title"><span>Время работы</span></h4>
                         <ul class="opening-hours">

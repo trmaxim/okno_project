@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView
-from .models import Images, Jalousie, Ceiling
+from .models import Images
 
 
 class ListViews(ListView):
@@ -11,6 +11,4 @@ class ListViews(ListView):
 
 	def get_context_data(self, **kwargs):
 		context = super(ListViews, self).get_context_data(**kwargs)
-		context['jalousie'] = Jalousie.objects.all()
-		context['ceiling'] = Ceiling.objects.all()
 		return context

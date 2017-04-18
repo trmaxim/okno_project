@@ -24,9 +24,9 @@
                                 <img src="img/pic-blank-1.gif" data-original="{{MEDIA_URL}}{{news.image}}" alt="" />
                                 <a href="{{news.get_absolute_url }}">
                                     <h3 class="blog-title">{{news.title}}</h3>
-                                </a>{{news.body}}
+                                </a>{{news.body|truncatechars:300}}
                             </div>
-                            <div class="meta-info">От <a href="#">{{news.author}}</a><span>|</span>Дата публикации: <em>{{news.published_date|date:'d.M.Y'}} год</em> | <em>Категория: </em></span><a href="{{news.category.get_absolute_url}}">{{news.category}}</a><span>|</span> </div>
+                            <div class="meta-info">От <a href="#">{{news.author}}</a><span>|</span>Дата публикации: <em>{{news.published_date|date:'d.M.Y'}} год</em><span></span> </div>
                         </li>
                         {% endfor %}
 
@@ -81,35 +81,6 @@
                             {% endfor %}
                         </ul>
                     </div>
-
-                    <!-- widget category -->
-                    <div class="widget widget_category">
-                        <h4 class="title"><span>Категории</span></h4>
-                        <ul>
-                        {% for category in categories %}
-                            <li><a href="{{ category.get_absolute_url }}"><i class="icon-folder-close"></i>{{category.name}}</a></li>
-                        {% endfor %}
-                        </ul>
-                    </div>
-
-                    <!-- widget tags
-                    <div class="widget widget_tags">
-                        <h4 class="title"><span>Теги</span></h4>
-                        <ul>
-                            <li><a href="#link">Строительство</a></li>
-                            <li><a href="#link">Шаблоны сайтов</a></li>
-                            <li><a href="#link">Дизайн</a></li>
-                            <li><a href="#link">Верстка</a></li>
-                            <li><a href="#link">Партнеры</a></li>
-                            <li><a href="http://html6.com.ru">Платные шаблоны</a></li>
-                            <li><a href="#link">Бесплатные шаблоны сайтов</a></li>
-                            <li><a href="#link">Купить шаблоны</a></li>
-                            <li><a href="#link">Скачать шаблоны</a></li>
-                        </ul>
-                    </div>
-                    -->
-
-                    
                 </div>
             </div>
 

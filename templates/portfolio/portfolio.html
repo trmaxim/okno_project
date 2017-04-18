@@ -16,10 +16,6 @@
             <div class="row">
                 <div class="span12">
                     <ul id="filters">
-                        <li><a href="#" data-filter="*" class="selected">Все</a></li>
-                        <li><a href="#" data-filter=".event">Окна</a></li>
-                        <li><a href="#" data-filter=".news">Жалюзи</a></li>
-                        <li><a href="#" data-filter=".gallery">Потолоки</a></li>
                        <!-- <li><a href="#" data-filter=".promotion">Запас</a></li> -->
                     </ul>
 
@@ -38,34 +34,6 @@
                         <span>{{images.pub_date}}</span>
                     </div>
                     {% endfor %}
-                    <!-- close <h4>Изображение жалюзи -->
-
-                    {% for images in jalousie %}
-                    <div class="span3 item news">
-                        <a class="preview" href="{{MEDIA_URL}}{{images.image}}" data-gal="prettyPhoto" title="{{images.description}}">
-                            <img src="{% static 'img/pic-blank-1.gif' %}" data-original="{{MEDIA_URL}}{{images.image}}" alt="">
-                        </a>
-                        <h4>{{images.name}}</h4>
-                        <span>{{images.pub_date}}</span>
-                    </div>
-                    {% endfor %}
-                    
-                    
-
-
-
-                   {% for images in ceiling %}
-                    <div class="span3 item gallery">
-                        <a class="preview" href="{{MEDIA_URL}}{{images.image}}" data-gal="prettyPhoto" title="{{images.description}}">
-                            <img src="{% static 'img/pic-blank-1.gif' %}" data-original="{{MEDIA_URL}}{{images.image}}" alt="">
-                        </a>
-                        <h4>{{images.name}}</h4>
-                        <span>{{images.pub_date}}</span>
-                    </div>
-                    {% endfor %}
-                  
-               
-
                 </div>
             </div>
         </div>

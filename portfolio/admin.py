@@ -1,8 +1,7 @@
 from django.contrib import admin
-from .models import Images, Jalousie, Ceiling
+from .models import Images
 
 
 
 admin.site.register(Images)
-admin.site.register(Jalousie)
-admin.site.register(Ceiling)
+
