@@ -11,11 +11,12 @@ def contact(request):
 		if form.is_valid():
 			name = form.cleaned_data['name']
 			number = form.cleaned_data['number']
-			date = form.cleaned_data['date']
+			message = form.cleaned_data['message']
+
 			
+			email_list = ['int_var@mail.ru']
 			try:
-				you_admin_email = ['int_var@mail.ru']
-				send_mail(name, number, date, you_admin_email)
+				send_mail(name, number, message, email_list)
 			except BadHeaderError: #Защита от уязвимости
 				return HttpResponse('Invalid header found')
 			#Переходим на другую страницу, если сообщение отправлено

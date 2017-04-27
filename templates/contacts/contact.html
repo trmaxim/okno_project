@@ -21,7 +21,7 @@
                         	<div class="span4">
                             	   {{ form.non_field_errors }}
                                 <div>
-                                  <label for="id_subject">Тема:</label>
+                                  <label for="id_subject">Имя:</label>
                                   {{ form.name.errors }}
                                   {{ form.name }}
                                 </div>
@@ -32,9 +32,10 @@
                                 </div>
                             
                                 <div>
-                                  <label for="id_message">Когда вам позвонить:</label>
-                                  {{ form.date}}
+                                  <label for="id_message">Текст сообщения:</label>
+                                  {{ form.message}}
                                 </div>
+                            
                             	<p id="btnsubmit">
                                     <input type="submit" id="send" value="Отправить" class="btn btn-large" /></p>
                          	</div>
