@@ -13,6 +13,7 @@ class Images(models.Model):
 	def __str__(self):
 		return self.name
 
+
 	class Meta:
 		ordering = ['pub_date']
 		verbose_name="Портфолио"
