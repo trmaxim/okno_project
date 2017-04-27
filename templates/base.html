@@ -1,5 +1,5 @@
 {% load staticfiles %}
-{% load slider %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +8,6 @@
     <title>Установка пластиковых окон</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{% static 'css/html6.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'admin/css/forms.css' %}" type="text/css" media="all" rel="stylesheet" />
-    <script type="text/javascript" src="{% static 'admin/js/jquery.min.js' %}"></script>
-    <link href="{% static 'admin/css/widgets.css' %}" type="text/css" media="all" rel="stylesheet" />
 
     <!-- LOAD JS FILES -->
     <script src="{% static 'js/jquery.min.js' %}"></script>
@@ -24,10 +21,6 @@
     <script src="{% static 'js/ender.js' %}"></script>
     <script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
     <script src="{% static 'js/custom.js' %}"></script>
-    <script type="text/javascript" src="/admin/jsi18n/"></script>
-    <script type="text/javascript" src="{% static 'admin/js/core.js' %}"></script>
-    <script type="text/javascript" src="{% static 'admin/js/calendar.js' %}"></script>
-    <script type="text/javascript" src="{% static 'admin/js/admin/DateTimeShortcuts.js' %}"></script>
 </head>
 
 <body>
@@ -43,10 +36,12 @@
         <!-- mainourservice begin -->
         <div id="mainourservice-container">
             <ul id="mainourservice">
-                <li><a href="{% url 'main' %}">Главаная</a></li>
+                <li><a href="{% url 'main' %}">Главная</a></li>
                 <li><a href="{% url 'news' %}">Новости</a></li>
                 <li><a href="{% url 'portfolio' %}">Портфолио</a></li>
                 <li><a href="{% url 'contact' %}">Контакты</a></li>
+                <li><a href="{% url 'add' %}">Расчет стоимости</a></li>
+
                 {% if user.is_staff%}
                 <span></span>
                 <span></span>
@@ -54,11 +49,29 @@
                 {% endif %}
             </ul>
         </div>
-
     </header>
-
-    {% show_slider %}
-
+    <section id="slider">
+        <div class="flexslider main-slider">
+            <ul class="slides">
+            {% for slider in sliders %}
+                <li>
+                    <div class="container">
+                        <div class="slider-info">
+                            <div class="inner">
+                                <h1>{{ slider.title }}</h1>
+                                <div class="slider-text">
+                                    {{slider.body}}
+    
+                                </div>
+                                <a href="{{slider.url}}" class="btn btn-primary">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="{{MEDIA_URL}}{{slider.image}}" alt="">
+                </li>
+            {% endfor  %}
+        </div>
+    </section>
     {% block content %}{% endblock %}
     <footer>
             <div class="container">
@@ -73,6 +86,7 @@
                                 <li><a href="{% url 'portfolio' %}">Портфолио</a></li>
                                 <li><a href="{% url 'news' %}">Новости</a></li>
                                 <li><a href="{% url 'contact' %}">Контакты</a></li>
+                                <li><a href="{% url 'add' %}">Расчет стоимости</a></li>
                             </ul>
                         </nav>
                     </div>

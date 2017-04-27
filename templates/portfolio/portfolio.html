@@ -27,8 +27,8 @@
                     <!-- <h4>Изображение проекта окон -->
                     {% for images in object_list %}
                     <div class="span3 item event">
-                        <a class="preview" href="{{MEDIA_URL}}{{images.image}}" data-gal="prettyPhoto" title="{{images.description}}">
-                            <img src="{% static 'img/pic-blank-1.gif' %}" data-original="{{MEDIA_URL}}{{images.image}}" alt="">
+                        <a class="preview" href="{{images.image}}" data-gal="prettyPhoto" title="{{images.description}}">
+                            <img src="{% static 'img/pic-blank-1.gif' %}" data-original="{{images.image}}" alt="">
                         </a>
                         <h4>{{images.name}}</h4>
                         <span>{{images.pub_date}}</span>

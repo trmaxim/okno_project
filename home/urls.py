@@ -21,7 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from portfolio.views import ListViews
 from contacts.views import contact
-
+from calculator.views import add
 
 
 urlpatterns = [
@@ -30,4 +30,5 @@ urlpatterns = [
     url(r'^portfolio/$', ListViews.as_view(), name = 'portfolio'),
     url(r'^news/', include('news.urls')),
     url(r'^contact/$', contact, name="contact"),
+    url(r'^calc/$', add, name="add"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

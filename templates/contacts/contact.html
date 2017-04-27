@@ -33,12 +33,7 @@
                             
                                 <div>
                                   <label for="id_message">Когда вам позвонить:</label>
-                                  {{ form.date.errors }}
-                                  {{ form.date }}
-                                </div>
-                                <div>
-                                  {{ form.copy.errors }}
-                                  <label for="id_copy">Отправить копию себе {{ form.copy }}</label>
+                                  {{ form.date}}
                                 </div>
                             	<p id="btnsubmit">
                                     <input type="submit" id="send" value="Отправить" class="btn btn-large" /></p>
@@ -80,4 +75,5 @@
         </div>
     </div>
     </div>
+    {{form.media}}
 {% endblock %}

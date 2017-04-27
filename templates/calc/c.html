@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <!-- subheader begin -->
+    <div id="subheader">
+        <h1>Расчет стоимости</h1>
+    </div>
+    <!-- subheader close -->
+
+    <!-- content begin -->
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="span8">
+                    <div class="contact_form_holder">
+                        <form id="contact" class="row" name="form1" method="post" action="#">{% csrf_token %}
+                        	<div class="span12">
+                            	  <div id="widget_container25781" class="ucalc-div"></div><script> var widgetOptions25781 = { bg_color: "transparent" }; (function() { var a = document.createElement("script"); a.async = true; a.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//ucalc.pro/api/widget.js?id=25781&t="+Math.floor(new Date()/3600000); document.getElementsByTagName("head")[0].appendChild(a) })();</script>
+                    </div>
+
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
